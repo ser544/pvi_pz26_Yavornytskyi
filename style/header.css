@@ -150,6 +150,30 @@ header{
   margin-right: 10px;
 }
 
+.account-dropdown button {
+  background-color: white;
+  border: 2px solid black;
+  padding: 8px 16px;
+  font-family: inherit; 
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 100%; 
+}
+
+.account-dropdown button:first-child:hover {
+  background-color: #f0f0f0;
+  border-color: blueviolet;
+  color: blueviolet;
+}
+
+.account-dropdown button:last-child:hover {
+  background-color: #ffe6e6; 
+  border-color: red;
+  color: red;
+}
+
 @media (max-width: 775px){
   .open-menu-btn{
     display: block;
