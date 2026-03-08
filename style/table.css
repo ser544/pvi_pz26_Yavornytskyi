@@ -28,6 +28,7 @@
   border-collapse: collapse;
   font-family: sans-serif;
   margin-top: 20px;
+  width: 100%;
 }
 
 
@@ -36,6 +37,9 @@
   transition: all 0.2s ease-in-out; 
 }
 
+.students-edit-btn{
+  margin-right: 5px;
+}
 
 .students-edit-btn:hover {
   background-color: #f0f0f0;
