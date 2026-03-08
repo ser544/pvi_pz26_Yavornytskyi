@@ -1,0 +1,173 @@
+body{
+  margin: 0;
+  font-family: Mulish;
+  padding-top: 51px;
+}
+
+a{
+  color: inherit;
+  text-decoration: inherit;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(155, 155, 155);
+  padding: 0 20px 0 15px;
+}
+
+.website-title{
+  color: white;
+  /*font-weight: bold;*/
+  font-family: Mulish;
+  font-size: 21px;
+  padding: 10px 0;
+  align-items: center;
+  display: flex;
+}
+
+.profile-picture{
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 186, 166);
+  object-fit: cover;
+  margin-left: 15px;
+}
+
+.notification-bell{
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-name{
+  margin-left: 2px;
+  color: white;
+  font-size: 18px;
+}
+
+.header-right-part{
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+}
+
+.message-sign{
+  position: absolute;
+  top: 0;
+  right: 0px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red;
+  display: none;
+}
+
+.bell-dropdown{
+  display: none;
+  border: 2px solid black;
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  cursor: default;
+  right: 0;
+  top: 100%;
+}
+
+.notification-bell:hover .bell-dropdown { 
+  display: block; 
+}
+
+.message-row{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.message-review{
+  color: grey;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.acc-info{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.account-dropdown{
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;  
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  flex-direction: column;
+  gap: 10px;
+  cursor: default;
+}
+
+
+
+.profile-container {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 5px; 
+}
+
+.profile-container:hover .account-dropdown {
+  display: flex;
+}
+
+@keyframes ringing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+.animate-ring {
+  animation: ringing 0.5s ease-in-out;
+}
+
+.open-menu-btn{
+  display: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  margin-right: 10px;
+}
+
+@media (max-width: 775px){
+  .open-menu-btn{
+    display: block;
+  }
+  
+  .page-location nav{
+    display: none;
+    position: fixed;
+    top: 51px;
+    left: 0;
+    width: 200px; 
+    bottom: 0;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  }
+
+  .page-location nav.nav-open {
+    display: flex;
+  }
+}

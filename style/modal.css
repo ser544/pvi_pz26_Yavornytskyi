@@ -1,0 +1,120 @@
+.modal-overlay{
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-open{
+    display: flex;
+}
+
+.modal-window{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 28px;
+    border: 2px solid red;
+    width: 90%;
+    max-width: 450px;
+}
+
+.modal-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 18px;
+}
+
+.modal-body{
+    display:flex;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    flex-direction: column;
+    padding: 20px 70px;
+}
+
+.modal-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 20px;
+}
+
+.modal-title{
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.modal-close-btn{
+    padding: 8px 12px;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.modal-form-row-label{
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.modal-input{
+    width: 100%;
+    max-width: 200px;
+    height: 23px;
+    border: 2px solid black;
+    padding: 2px 2px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.modal-form-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    align-items: center;
+}   
+
+.modal-footer-btn{
+    margin: 18px 5px;
+    padding: 8px 24px; 
+    background-color: white; 
+    border: 2px solid black;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-footer-btn:hover {
+    background-color: #f0f0f0; 
+    border-color: blueviolet; 
+    color: blueviolet; 
+}
+
+#edit-student-cancel-btn:hover,
+#delete-student-cancel-btn:hover {
+    border-color: red;
+    color: red;
+}
+
+@media (max-width: 576px) {
+  .modal-body {
+    padding: 20px 20px; 
+  }
+  .modal-form-row {
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 5px;
+  }
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <title>Document</title>
+	<link href="style/header.css" rel="stylesheet">
+	<link href="style/page.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/table.css">
+  <link rel="stylesheet" href="style/modal.css">
+</head>
+<body>
+  <header class="header">
+		<div class="website-title">
+			<button class="open-menu-btn">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<line x1="3" y1="12" x2="21" y2="12"></line>
+					<line x1="3" y1="6" x2="21" y2="6"></line>
+					<line x1="3" y1="18" x2="21" y2="18"></line>
+				</svg>
+			</button>
+
+			<a href="students.html">CMS</a>
+		</div>
+
+		<div class="header-right-part">
+			<div class="notification-bell" >
+				<a href="messages.html">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="bell">
+						<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+						<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+					</svg>
+				</a>
+				
+				<div class="bell-dropdown">
+					<div class="message-row">
+						<div class="acc-info">
+							<img class="profile-picture" src="../image.png" alt="Profile picture of Anna">
+							<span class="profile-name" style="color: black;">Anna Minaj</span>
+						</div>
+						
+						<p class="message-review">All I want is you minding your ...</p>
+					</div>
+
+					<div class="message-row">
+						<div class="acc-info">
+							<img class="profile-picture" src="../image.png" alt="Profile picture of Anna">
+							<span class="profile-name" style="color: black;">Anna Minaj</span>
+						</div>
+						
+						<p class="message-review">All I want is you minding your ...</p>
+					</div>
+
+
+					<div class="message-row">
+						<div class="acc-info">
+							<img class="profile-picture" src="../image.png" alt="Profile picture of Anna">
+							<span class="profile-name" style="color: black;">Anna Minaj</span>
+						</div>
+						
+						<p class="message-review">All I want is you minding your ...</p>
+					</div>
+				</div>
+
+				<div class="message-sign"></div>
+			</div>
+
+			<div class="profile-container">
+        <img src="../image.png" class="profile-picture" alt="Profile picture of James">
+        <span class="profile-name">James Bond</span>
+
+        <div class="account-dropdown">
+          <button>Profile</button>
+          <button>LogOut</button>
+        </div>
+      </div>
+		</div> 
+	</header>
+
+  <div class="page-location">
+    <nav>
+      <a href="dashboard.html" class="button-navigation">Dashboard</a>
+      <a href="students.html" class="button-navigation current">Students</a>
+      <a href="tasks.html" class="button-navigation">Tasks</a>
+    </nav>
+
+    <main>
+      <h1 class="page-title">Students</h1>
+      <button class="add-student-btn" id="add-student-open-btn">+</button>
+      <div class="table-wrapper">
+				<table class="students-table">
+					<thead>
+						<tr>
+							<th><input type="checkbox" id="checkbox-main"></th>
+							<th>Group</th>
+							<th>Name</th>
+							<th>Gender</th>
+							<th>Birthday</th>
+							<th>Status</th>
+							<th>Options</th>
+						</tr>
+					</thead>
+					<tbody class="students-table-body">
+					</tbody>
+				</table>
+							
+			</div>
+			
+			<div class="pagination-part">
+				<button class="page-btn">
+					&lt;
+				</button>
+				<button class="page-btn current-page">
+					1
+				</button>
+				<button class="page-btn">
+					2
+				</button>
+				<button class="page-btn">
+					3
+				</button>
+				<button class="page-btn">
+					4
+				</button>
+				<button class="page-btn">
+					5
+				</button>
+				<button class="page-btn">
+					&gt;
+				</button>
+			</div>			
+    </main>
+  </div>
+  
+  <div class="modal-overlay" id="add-student">
+		<div class="modal-window">
+			<div class="modal-header">
+				<span class="modal-title">Add student</span>
+				<button class="modal-close-btn" id="add-student-close-btn">Х</button>
+			</div>
+
+			<div class="modal-body">
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						Group
+					</span>
+				<!--<input class="modal-input"> -->
+					<select name="groups" id="groups" class="modal-input">
+						<option value="PZ-21">PZ-21</option>
+						<option value="PZ-22">PZ-22</option>
+						<option value="PZ-23">PZ-23</option>
+						<option value="PZ-24">PZ-24</option>
+						<option value="PZ-25">PZ-25</option>
+						<option value="PZ-26">PZ-26</option>
+					</select>
+				</div>
+
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						First name
+					</span>
+					<input class="modal-input" id = "first-name">
+				</div>
+
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						Last name
+					</span>
+					<input class="modal-input" id = "last-name">
+				</div>
+
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						Gender
+					</span>
+					<select name="groups" id="gender" class="modal-input">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</div>
+
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						Birthday
+					</span>
+					<input class="modal-input"  id = "birthday" type="date">
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button class="modal-footer-btn" id="add-student-ok-btn">
+					OK
+				</button>
+
+				<button class="modal-footer-btn" id="add-student-create-btn">
+					Create
+				</button>
+			</div>
+		</div>
+	</div>
+
+  <div class="modal-overlay" id="edit-student">
+		<div class="modal-window">
+			<div class="modal-header">
+				<span class="modal-title">Edit student</span>
+				<button class="modal-close-btn" id="edit-student-close-btn">Х</button>
+			</div>
+
+			<div class="modal-body">
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						Group
+					</span>
+				<!--<input class="modal-input"> -->
+					<select name="groups" id="groups-edit" class="modal-input">
+						<option value="PZ-21">PZ-21</option>
+						<option value="PZ-22">PZ-22</option>
+						<option value="PZ-23">PZ-23</option>
+						<option value="PZ-24">PZ-24</option>
+						<option value="PZ-25">PZ-25</option>
+						<option value="PZ-26">PZ-26</option>
+					</select>
+				</div>
+
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						First name
+					</span>
+					<input class="modal-input" id = "first-name-edit">
+				</div>
+
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						Last name
+					</span>
+					<input class="modal-input" id = "last-name-edit">
+				</div>
+
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						Gender
+					</span>
+					<select name="genders" id="gender-edit" class="modal-input">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</div>
+
+				<div class="modal-form-row">
+					<span class="modal-form-row-label">
+						Birthday
+					</span>
+					<input class="modal-input"  id = "birthday-edit" type="date">
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button class="modal-footer-btn" id="edit-student-cancel-btn">
+					Cancel
+				</button>
+
+				<button class="modal-footer-btn" id="edit-student-edit-btn">
+					Edit
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-overlay" id="delete-student">
+    <div class="modal-window" style="width: 400px;"> <div class="modal-header">
+        <span class="modal-title">Warning</span>
+        <button class="modal-close-btn" id="delete-student-close-btn">Х</button>
+      </div>
+
+      <div class="modal-body" style="text-align: left; font-size: 18px;">
+        <p style="margin: 0;">Are you sure you want to delete student<span id="plural"></span><b id="delete-student-name"></b>?</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="modal-footer-btn" id="delete-student-cancel-btn">
+          Cancel
+        </button>
+        <button class="modal-footer-btn" id="delete-student-ok-btn">
+          Ok
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+	<script src="script/student.js"></script>
+  <script src="script/editStudent.js"></script>
+  <script src="script/addStudent.js"></script>
+  <script src="script/modal-behavoiur.js"></script>
+  <script src="script/render-table.js"></script>
+  <script src="script/check-all-checkboxes.js"></script>
+	<script src="script/delete-student.js"></script>
+	<script src="script/header-behaviour.js"></script>
+	<script src="script/add-event-listeners.js"></script>
+</body>
+</html>

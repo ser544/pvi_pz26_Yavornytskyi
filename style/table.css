@@ -1,0 +1,60 @@
+.add-student-btn{
+  background-color: inherit;
+  vertical-align: middle;
+  border: 2px solid black;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.students-edit-btn,
+.students-delete-btn{
+  height: 30px;
+  width: 30px;
+  background-color: inherit;
+  vertical-align: middle;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.students-table th, 
+.students-table td {
+  border: 1px solid #dddddd;
+  padding: 12px 15px; 
+  text-align: left; 
+  margin: 0;
+}
+
+.students-table {
+  border-collapse: collapse;
+  font-family: sans-serif;
+  margin-top: 20px;
+}
+
+
+.students-edit-btn,
+.students-delete-btn {
+  transition: all 0.2s ease-in-out; 
+}
+
+
+.students-edit-btn:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+  border-color: blueviolet;
+}
+
+.students-delete-btn:hover {
+  background-color: #ffe6e6; 
+  transform: scale(1.1);
+  border-color: red;
+  color: red;
+}
+
+.table-wrapper {
+  overflow-x: auto; 
+  width: 100%;
+}
+
+.students-table th, .students-table td {
+  white-space: nowrap; 
+}
