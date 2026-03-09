@@ -19,6 +19,7 @@ nav{
 }
 
 .button-navigation:hover{
+  background-color: #ccffff;
   background-color: rgba(0, 255, 255, 0.4);
 }
 
