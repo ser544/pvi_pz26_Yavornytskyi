@@ -94,7 +94,10 @@
 				<table class="students-table">
 					<thead>
 						<tr>
-							<th><input type="checkbox" id="checkbox-main" aria-label="Select all students"></th>
+							<th>
+								<span class="visually-hidden">Select All</span>
+								<input type="checkbox" id="checkbox-main" aria-label="Select all students">
+							</th>
 							<th>Group</th>
 							<th>Name</th>
 							<th>Gender</th>
@@ -144,7 +147,7 @@
 
 			<div class="modal-body">
 				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="group">
+					<label class="modal-form-row-label" for="groups">
 						Group
 					</label>
 				<!--<input class="modal-input"> -->
@@ -211,7 +214,7 @@
 
 			<div class="modal-body">
 				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="group">
+					<label class="modal-form-row-label" for="groups-edit">
 						Group
 					</label>
 				<!--<input class="modal-input"> -->
@@ -226,21 +229,21 @@
 				</div>
 
 				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="first-name">
+					<label class="modal-form-row-label" for="first-name-edit">
 						First name
 					</label>
 					<input class="modal-input" id = "first-name-edit">
 				</div>
 
 				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="last-name">
+					<label class="modal-form-row-label" for="last-name-edit">
 						Last name
 					</label>
 					<input class="modal-input" id = "last-name-edit">
 				</div>
 
 				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="gender">
+					<label class="modal-form-row-label" for="gender-edit">
 						Gender
 					</label>
 					<select name="genders" id="gender-edit" class="modal-input">
@@ -250,7 +253,7 @@
 				</div>
 
 				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="birthday">
+					<label class="modal-form-row-label" for="birthday-edit">
 						Birthday
 					</label>
 					<input class="modal-input"  id = "birthday-edit" type="date">

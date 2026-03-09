@@ -13,6 +13,7 @@ function renderTable(){
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
       checkbox.id = `checkbox-${i}`;
+      checkbox.setAttribute('aria-label', 'Select student');
       tdCheckbox.appendChild(checkbox);
       tableRow.appendChild(tdCheckbox);
       
