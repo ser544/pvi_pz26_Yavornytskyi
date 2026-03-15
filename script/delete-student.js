@@ -39,19 +39,6 @@ function showDeleteModal(clickedIndex) {
   }
   
   openModal('delete-student');
-  /*const nameElement = document.getElementById('delete-student-name');
-  
-  if (studentsToDelete.length === 1) {
-    const student = studentsArray[studentsToDelete[0]];
-    nameElement.textContent = ' ' + student.firstName + ' ' + student.lastName;
-  } else {
-    nameElement.textContent = `s ${studentsToDelete.length} selected students: `;
-    for(let i = 0; i < studentsToDelete.length; i++) {
-      nameElement.textContent += `\n ${studentsArray[studentsToDelete[i]].firstName + ' ' + studentsArray[studentsToDelete[i]].lastName}`;
-    }
-  }
-  
-  openModal('delete-student');*/
 }
 
 function confirmDelete() {
