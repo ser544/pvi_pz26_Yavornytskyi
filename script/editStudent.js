@@ -25,18 +25,12 @@ function openEditModalCheck(clickedIndex) {
 
   studentIndexToEdit = clickedIndex;
   showEditStudent();
-  openModal('edit-student'); 
+  openModal('Edit Student'); 
 }
 
 function editStudent(){
   if (studentIndexToEdit == undefined || studentIndexToEdit == null) return;
   const student = studentsArray[studentIndexToEdit];
-
-  const groupInput = document.getElementById('groups-edit');
-  const firstNameInput = document.getElementById('first-name-edit');
-  const lastNameInput = document.getElementById('last-name-edit');
-  const genderInput = document.getElementById('gender-edit');
-  const birthdayInput = document.getElementById('birthday-edit');
 
   const group = groupInput.value;
   const firstName = firstNameInput.value;
@@ -52,18 +46,13 @@ function editStudent(){
   student.gender = gender;
   student.birthday = birthday;
 
+  closeModal();
   renderTable();
 }
 
 function showEditStudent(){
   if (studentIndexToEdit == undefined || studentIndexToEdit == null) return;
   const student = studentsArray[studentIndexToEdit];
-
-  const groupInput = document.getElementById('groups-edit');
-  const firstNameInput = document.getElementById('first-name-edit');
-  const lastNameInput = document.getElementById('last-name-edit');
-  const genderInput = document.getElementById('gender-edit');
-  const birthdayInput = document.getElementById('birthday-edit');
 
   groupInput.value = student.group;
   firstNameInput.value = student.firstName;
