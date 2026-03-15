@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-  <title>Document</title>
+	<title>Document</title>
 	<link href="style/header.css" rel="stylesheet">
 	<link href="style/page.css" rel="stylesheet">
   <link rel="stylesheet" href="style/table.css">
@@ -141,8 +141,8 @@
   <div class="modal-overlay" id="add-student">
 		<div class="modal-window">
 			<div class="modal-header">
-				<span class="modal-title">Add student</span>
-				<button class="modal-close-btn" id="add-student-close-btn" aria-label="Close">Х</button>
+				<span class="modal-title"></span>
+				<button class="modal-close-btn" id="close-btn" aria-label="Close">Х</button>
 			</div>
 
 			<div class="modal-body">
@@ -193,78 +193,12 @@
 			</div>
 
 			<div class="modal-footer">
-				<button class="modal-footer-btn" id="add-student-ok-btn">
+				<button class="modal-footer-btn" id="left-btn">
 					OK
 				</button>
 
-				<button class="modal-footer-btn" id="add-student-create-btn">
+				<button class="modal-footer-btn" id="right-btn">
 					Create
-				</button>
-			</div>
-		</div>
-	</div>
-
-  <div class="modal-overlay" id="edit-student">
-		<div class="modal-window">
-			<div class="modal-header">
-				<span class="modal-title">Edit student</span>
-				<button class="modal-close-btn" id="edit-student-close-btn" aria-label="Close">Х</button>
-			</div>
-
-			<div class="modal-body">
-				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="groups-edit">
-						Group
-					</label>
-					<select name="groups" id="groups-edit" class="modal-input">
-						<option value="PZ-21">PZ-21</option>
-						<option value="PZ-22">PZ-22</option>
-						<option value="PZ-23">PZ-23</option>
-						<option value="PZ-24">PZ-24</option>
-						<option value="PZ-25">PZ-25</option>
-						<option value="PZ-26">PZ-26</option>
-					</select>
-				</div>
-
-				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="first-name-edit">
-						First name
-					</label>
-					<input class="modal-input" id = "first-name-edit">
-				</div>
-
-				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="last-name-edit">
-						Last name
-					</label>
-					<input class="modal-input" id = "last-name-edit">
-				</div>
-
-				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="gender-edit">
-						Gender
-					</label>
-					<select name="genders" id="gender-edit" class="modal-input">
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
-					</select>
-				</div>
-
-				<div class="modal-form-row">
-					<label class="modal-form-row-label" for="birthday-edit">
-						Birthday
-					</label>
-					<input class="modal-input"  id = "birthday-edit" type="date">
-				</div>
-			</div>
-
-			<div class="modal-footer">
-				<button class="modal-footer-btn" id="edit-student-cancel-btn">
-					Cancel
-				</button>
-
-				<button class="modal-footer-btn" id="edit-student-edit-btn">
-					Edit
 				</button>
 			</div>
 		</div>
@@ -293,8 +227,6 @@
 
 
 	<script src="script/student.js"></script>
-  <script src="script/editStudent.js"></script>
-  <script src="script/addStudent.js"></script>
   <script src="script/modal-behavoiur.js"></script>
   <script src="script/render-table.js"></script>
   <script src="script/check-all-checkboxes.js"></script>

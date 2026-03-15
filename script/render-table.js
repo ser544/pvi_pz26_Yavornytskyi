@@ -29,7 +29,7 @@ function renderTable(){
       
       //Creating student's gender
       const tdGender = document.createElement('td');
-      tdGender.textContent = student.gender[0]; // Беремо першу літеру (M або F)
+      tdGender.textContent = student.gender[0];
       tableRow.appendChild(tdGender);
       
       //Creating student's birthday
