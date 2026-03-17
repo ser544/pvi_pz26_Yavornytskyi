@@ -1,12 +1,10 @@
-let studentIndexToEdit;
-
 function openEditModalCheck(clickedIndex) {
   const checkboxes = document.querySelectorAll('.students-table-body input[type="checkbox"]');
   let selectedIndices = [];
   
   for (let i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
-      selectedIndices.push(i);
+      selectedIndices.push(parseInt(checkboxes[i].id.replace('checkbox-', '')));
     }
   }
 
@@ -23,40 +21,14 @@ function openEditModalCheck(clickedIndex) {
     return;
   }
 
-  studentIndexToEdit = clickedIndex;
-  showEditStudent();
-  openModal('Edit Student'); 
-}
-
-function editStudent(){
-  if (studentIndexToEdit == undefined || studentIndexToEdit == null) return;
-  const student = studentsArray[studentIndexToEdit];
-
-  const group = groupInput.value;
-  const firstName = firstNameInput.value;
-  const lastName = lastNameInput.value;
-  const gender = genderInput.value;
-  const birthday = birthdayInput.value;
-
-  if(!group || !firstName || !lastName || !gender || !birthday) return;
-
-  student.group = group;
-  student.firstName = firstName;
-  student.lastName = lastName;
-  student.gender = gender;
-  student.birthday = birthday;
-
-  closeModal();
-  renderTable();
-}
-
-function showEditStudent(){
-  if (studentIndexToEdit == undefined || studentIndexToEdit == null) return;
-  const student = studentsArray[studentIndexToEdit];
-
+  const student = studentsArray[clickedIndex];
+  console.log(student)
+  idInput.value = student.id; 
   groupInput.value = student.group;
   firstNameInput.value = student.firstName;
   lastNameInput.value = student.lastName;
   genderInput.value = student.gender;
   birthdayInput.value = student.birthday;
+
+  openModal('Edit Student'); 
 }

@@ -1,3 +1,4 @@
+const idInput = document.getElementById('student-id');
 const groupInput = document.getElementById('groups');
 const firstNameInput = document.getElementById('first-name');
 const lastNameInput = document.getElementById('last-name');
@@ -5,6 +6,7 @@ const genderInput = document.getElementById('gender');
 const birthdayInput = document.getElementById('birthday');
 
 const addStudent = function(isAlertNeeded=true){
+  const id = crypto.randomUUID();
   const group = groupInput.value;
   const firstName = firstNameInput.value.trim();
   const lastName = lastNameInput.value.trim();
@@ -25,20 +27,17 @@ const addStudent = function(isAlertNeeded=true){
     return; 
   }
 
-  const student = new Student(group, firstName, lastName, gender, birthday);
+  const student = new Student(id, group, firstName, lastName, gender, birthday);
   studentsArray.push(student);
 
-  groupInput.value = '';
-  firstNameInput.value = '';
-  lastNameInput.value = '';
-  genderInput.value = '';
-  birthdayInput.value = '';
+  console.log(JSON.stringify(student));
 
   closeModal();
   renderTable();
 }
 
 function addStudentPreparation(){
+  idInput.value = '';
   groupInput.value = '';
   firstNameInput.value = '';
   lastNameInput.value = '';

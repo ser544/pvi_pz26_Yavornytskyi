@@ -5,10 +5,21 @@ function openModal(name){
     document.getElementById('delete-student').classList.add('modal-open');
     return;
   }
-  document.querySelector('.modal-title').innerText = name;
-  if (name === 'Add Student') addStudentPreparation();
-  addRightButtonBehaviour();
-  addLeftButtonBehaviour();
+
+  const titleElement = document.querySelector('.modal-title');
+  const rightButton = document.getElementById('right-btn');
+  const leftButton = document.getElementById('left-btn');
+
+  titleElement.innerText = name;
+  
+  if (name === 'Add Student') {
+    addStudentPreparation();
+    rightButton.innerText = 'Create';
+    leftButton.innerText = 'OK';
+  } else if (name === 'Edit Student') {
+    rightButton.innerText = 'Edit';
+    leftButton.innerText = 'Cancel';
+  }
   modal.classList.add('modal-open');
 }
 
@@ -20,38 +31,57 @@ function closeModal(name = null){
   modal.classList.remove('modal-open');
 }
 
-function addRightButtonBehaviour(){
-  const modalName = document.querySelector('.modal-title').innerText.trim();
-  const rightButton = document.getElementById('right-btn');
+function saveStudent(isAlertNeeded=true){
+  const currentId = idInput.value.trim();
+  const group = groupInput.value;
+  const firstName = firstNameInput.value.trim();
+  const lastName = lastNameInput.value.trim();
+  const gender = genderInput.value;
+  const birthday = birthdayInput.value;
 
-  rightButton.removeEventListener('click', addStudent);
-  rightButton.removeEventListener('click', editStudent);
+  validate(); // Місце для майбутньої валідації
 
-  if (modalName === 'Add Student'){
-    rightButton.addEventListener('click', addStudent);
-    rightButton.innerText = 'Create';
-  } else if (modalName === 'Edit Student') {
-    rightButton.addEventListener('click', editStudent);
-    rightButton.innerText = 'Edit';
+  const emptyFields = [];
+  if (!group) emptyFields.push("Group");
+  if (!firstName) emptyFields.push("First name");
+  if (!lastName) emptyFields.push("Last name");
+  if (!gender) emptyFields.push("Gender");
+  if (!birthday) emptyFields.push("Birthday");
+  
+  if (emptyFields.length > 0) {
+    if (isAlertNeeded) {
+      alert(`Enter ${emptyFields.length > 1 ? 'these' : 'this'}:\n- ${emptyFields.join('\n- ')}`);
+    } else {
+      closeModal();
+    }
+    return;
   }
+  
+  if (!currentId) {
+    const newId = crypto.randomUUID();
+    const newStudent = new Student(newId, group, firstName, lastName, gender, birthday);
+    studentsArray.push(newStudent);
+    
+    console.log(JSON.stringify(newStudent)); 
+    
+  } else {
+    const studentToEdit = studentsArray.find(student => student.id === currentId);
+    
+    if (studentToEdit) {
+      studentToEdit.group = group;
+      studentToEdit.firstName = firstName;
+      studentToEdit.lastName = lastName;
+      studentToEdit.gender = gender;
+      studentToEdit.birthday = birthday;
+      
+      console.log(JSON.stringify(studentToEdit));
+    }
+  }
+
+  closeModal();
+  renderTable();
 }
 
-function addLeftButtonBehaviour(){
-  const modalName = document.querySelector('.modal-title').innerText.trim();
-  const leftButton = document.getElementById('left-btn');
+function validate(){
 
-  const clickHandler = () => {
-    addStudent(false);
-  };
-
-  leftButton.removeEventListener('click', clickHandler);
-  leftButton.removeEventListener('click', closeModal);
-
-  if (modalName === 'Add Student'){
-    leftButton.addEventListener('click', clickHandler);
-    leftButton.innerText = 'OK';
-  } else if (modalName === 'Edit Student') {
-    leftButton.addEventListener('click', closeModal);
-    leftButton.innerText = 'Cancel';
-  }
 }
