@@ -4,5 +4,5 @@ const studentsArray = [{
   firstName: 'Anna',
   lastName:'Minaj',
   gender:'Female',
-  birthday: '2026-03-04'
+  birthday: '2007-05-17'
 }];
