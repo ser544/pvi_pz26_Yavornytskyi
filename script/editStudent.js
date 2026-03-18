@@ -1,4 +1,5 @@
 function openEditModalCheck(clickedIndex) {
+  /*
   const checkboxes = document.querySelectorAll('.students-table-body input[type="checkbox"]');
   let selectedIndices = [];
   
@@ -20,9 +21,9 @@ function openEditModalCheck(clickedIndex) {
     alert("Please check the box for this specific student to edit them.");
     return;
   }
-
+  */
   const student = studentsArray[clickedIndex];
-  console.log(student)
+
   idInput.value = student.id; 
   groupInput.value = student.group;
   firstNameInput.value = student.firstName;

@@ -9,7 +9,8 @@ document.getElementById('delete-student-cancel-btn').addEventListener('click', (
 document.getElementById('delete-student-ok-btn').addEventListener('click', () => confirmDelete());
 
 
-document.getElementById('right-btn').addEventListener('click', () => {
+document.getElementById('right-btn').addEventListener('click', (event) => {
+  event.preventDefault();
   saveStudent(true);
 });
 

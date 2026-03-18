@@ -145,61 +145,78 @@
 				<button class="modal-close-btn" id="close-btn" aria-label="Close">Х</button>
 			</div>
 
-			<form class="modal-body">
+			<form class="modal-body" id="student-form">
 				<div class="modal-form-row">
 					<input type="hidden" id="student-id" value="">
 
 					<label class="modal-form-row-label" for="groups">
 						Group
 					</label>
-					<select name="groups" id="groups" class="modal-input">
-						<option value="PZ-21">PZ-21</option>
-						<option value="PZ-22">PZ-22</option>
-						<option value="PZ-23">PZ-23</option>
-						<option value="PZ-24">PZ-24</option>
-						<option value="PZ-25">PZ-25</option>
-						<option value="PZ-26">PZ-26</option>
-					</select>
+					<div class="input-wrapper">
+						<select required name="groups" id="groups" class="modal-input">
+							<option value="" disabled selected>Select group</option>
+							<option value="PZ-21">PZ-21</option>
+							<option value="PZ-22">PZ-22</option>
+							<option value="PZ-23">PZ-23</option>
+							<option value="PZ-24">PZ-24</option>
+							<option value="PZ-25">PZ-25</option>
+							<option value="PZ-26">PZ-26</option>
+						</select>
+						<span class="error-message"></span>
+					</div>
 				</div>
 
 				<div class="modal-form-row">
 					<label class="modal-form-row-label" for="first-name">
 						First name
 					</label>
-					<input class="modal-input" id = "first-name">
+					<div class="input-wrapper">
+						<input required class="modal-input" id = "first-name" maxlength="20" pattern="[A-Za-z' \-]+">
+						<span class="error-message"></span>
+					</div>
 				</div>
 
 				<div class="modal-form-row">
 					<label class="modal-form-row-label" for="last-name">
 						Last name
 					</label>
-					<input class="modal-input" id = "last-name">
+					<div class="input-wrapper">
+						<input required class="modal-input" id = "last-name" maxlength="20" pattern="[A-Za-z' \-]+">
+						<span class="error-message"></span>
+					</div>
 				</div>
 
 				<div class="modal-form-row">
 					<label class="modal-form-row-label" for="gender">
 						Gender
 					</label>
-					<select name="groups" id="gender" class="modal-input">
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
-					</select>
+					<div class="input-wrapper">
+						<select required name="gender" id="gender" class="modal-input">
+							<option value="" disabled selected>Select gender</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+						<span class="error-message"></span>
+					</div>
 				</div>
 
 				<div class="modal-form-row">
 					<label class="modal-form-row-label" for="birthday">
 						Birthday
 					</label>
-					<input class="modal-input"  id = "birthday" type="date">
+					<div class="input-wrapper">
+						<input required class="modal-input"  id="birthday" type="date" min="1936-01-01" max="2011-12-31">
+						<span class="error-message"></span>
+					</div>
 				</div>
 			</form>
 
 			<div class="modal-footer">
-				<button class="modal-footer-btn" id="left-btn">
+				<button type="button" class="modal-footer-btn" id="left-btn">
 					OK
 				</button>
 
-				<button class="modal-footer-btn" id="right-btn">
+				<button class="modal-footer-btn" id="right-btn" type="submit" form="student-form">
 					Create
 				</button>
 			</div>

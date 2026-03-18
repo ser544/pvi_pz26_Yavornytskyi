@@ -81,7 +81,7 @@
 .modal-form-row{
     display: flex;
     justify-content: space-between;
-    margin: 5px 0;
+    margin: 12px 0;
     align-items: center;
 }   
 
@@ -118,4 +118,26 @@
     align-items: flex-start;
     gap: 5px;
   }
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
+}
+
+.error-message {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: red;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.input-error {
+    border-color: red !important;
+    background-color: #ffe6e6;
 }
